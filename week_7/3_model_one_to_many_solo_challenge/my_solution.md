@@ -1,14 +1,29 @@
 # U3.W7: Modeling a Real-World Database (SOLO CHALLENGE)
 
 ## Release 0: Users Fields
-<!-- Identify the fields Twitter collects data for -->
+User fields Twitter collects:
 
+
+1. number_of_tweets (integer)
+2. number_following (integer)
+3. number_followers (integer)
+4. name (string)
+5. user_name (string)
+6. location (string)
+7. created_at (DateTime)
+8. updated_at (DateTime)
 ## Release 1: Tweet Fields
-<!-- Identify the fields Twitter uses to represent/display a tweet. What are you required or allowed to enter? -->
+Fields Twitter uses to represent/display a tweet:
+
+1. user_name (string)
+2. location (string)
+3. tweet_content (string)
+4. created_at (DateTime)
+5. updated_at (DateTime)
 
 ## Release 2: Explain the relationship
-The relationship between `users` and `tweets` is: 
-<!-- because... -->
+The relationship between `users` and `tweets` is: One-to-Many because each user can have many tweets, but each tweet is associated with only one user.
+
 
 ## Release 3: Schema Design
 <!-- Include your image (inline) of your schema -->
