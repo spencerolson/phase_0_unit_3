@@ -5,11 +5,6 @@
 
 
 ### My Quiz Results:
-<!-- Include the link to your image (saved in the imgs folder) to display it inline. -->
-
-
-
-
-
+![image](https://github.com/spencerolson/phase_0_unit_3/tree/master/week_7/imgs/sql_zoo.jpg)
 
 ### Reflection
