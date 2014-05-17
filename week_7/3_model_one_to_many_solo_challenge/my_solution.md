@@ -50,4 +50,5 @@ The relationship between `users` and `tweets` is: One-to-Many because each user 
 
 
 ## Release 5: Reflection
-<!-- Be sure to add your reflection here!!! -->
+
+In this challenge, I got a good sense of how you would conceptually break an idea down into separate tables that need to be created. The one-to-many relationship is making sense to me, and I like how the challenge ended with the use of SQL statements that would access the tables. I had to refer back to SQLzoo a few times to get the syntax down, but I feel I'm finally getting a general idea as to how I'd begin building data structures behind a site using SQL.
