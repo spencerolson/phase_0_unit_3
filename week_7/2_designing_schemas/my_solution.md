@@ -32,4 +32,5 @@ My many-to-many model shows the relationship between a student and a class. This
 
 ## Release 5: Reflection
 
+This exercise definitely forced me think in a whole new way. I'm still having a hard time conceptualizing the idea of one-to-one and many-to-many relationships. I think I've got a pretty good grasp of one-to-many, though. Creating the schemas helped to organize the relationships, and to figure out how unique keys and foreign keys relate to one another.
 
