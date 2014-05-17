@@ -34,11 +34,20 @@ The relationship between `users` and `tweets` is: One-to-Many because each user 
 
 * All the tweets for a certain user id
 
+![all tweets for a certain user id](../imgs/all_tweets_for_user_id.png)
+
 * The tweets for a certain user id that were made after last Wednesday (whenever last Wednesday was for you)
+
+![all tweets for a certain user id after last wednesday](../imgs/all_tweets_for_user_id_after_date.png)
 
 * All the tweets associated with a given user's twitter handle
 
+![all tweets for a certain user name](../imgs/all_tweets_for_user_name.png)
+
 * The twitter handle associated with a given tweet id
+
+![user name for tweet id](../imgs/user_name_for_tweet_id.png)
+
 
 ## Release 5: Reflection
 <!-- Be sure to add your reflection here!!! -->
