@@ -6,7 +6,7 @@
 
 ### My Quiz Results:
 
-![image](https://github.com/spencerolson/phase_0_unit_3/blob/master/week_7/imgs/sql_zoo.jpg "My results")
+![image](../imgs/sql_zoo.jpg "My results")
 
 
 
