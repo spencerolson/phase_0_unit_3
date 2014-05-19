@@ -1,3 +1,7 @@
+#1. Spencer Olson
+#2. Alec Ashford
+#3. Andy Principe
+
 #As a user, we want to be able to store our list for later use
 #As a user, we want to be able to see the list printed out in its entirety
 #As a user, we want to be able to check items off the list, effectively removing them from the list
@@ -43,12 +47,17 @@ def assert
   raise "Assertion failed!" unless yield
 end
 
-new_list = GroceryList.new
-new_list.add("orange", 3)
+ new_list = GroceryList.new
 
-new_list.purchase("orange")
-assert{new_list.print_list == "Name: orange, Quantity: 0"}
+ puts "adding 3 oranges to the list..."
+ new_list.add("orange", 3)
+ new_list.print_list
 
-new_list.add("eggs", 12)
+ puts "purchasing oranges..."
+ assert{new_list.purchase("orange") == 0}
+ new_list.print_list
 
-assert{new_list.print_list == "Name: orange, Quantity: 0 \nName: eggs, Quantity: 12"}
+ puts "adding a dozen eggs to the list..."
+ new_list.add("eggs", 12)
+ new_list.print_list
+
