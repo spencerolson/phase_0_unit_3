@@ -7,7 +7,7 @@ variables match (i.e., 'Joseph' is the first element in students; his scores are
 
 Do not alter the students and scores code.
 
-I worked on this challenge [by myself, with:]
+I worked on this challenge by myself.
 
 */
 
@@ -26,24 +26,56 @@ var scores = [ [80, 70, 70, 100],
 // __________________________________________
 // Write your code below.
 
+// var average = function(arr){
+//   var sum=0
+//   for(var i = 0; i < arr.length; i++){
+//     sum += arr[i];
+//   }
+//   return sum/arr.length
+// }
 
 
-
-
+// var gradebook = {
+//   Joseph: {testScores: scores[0]},
+//   Susan: {testScores: scores[1]},
+//   William: {testScores: scores[2]},
+//   Elizabeth: {testScores: scores[3]},
+//   addScore: function(name, score){
+//     gradebook[name].testScores.push(score);
+//   },
+//   getAverage: function(name){
+//     return average(gradebook[name].testScores);
+//   }
+// }
 
 // __________________________________________
 // Refactored Solution
 
+var average = function(arr){
+  sum = 0;
+  for(var i = 0; i < arr.length; i++){
+    sum += arr[i];
+  }
+  return sum/arr.length
+}
 
 
+var gradebook = {
+  addScore: function(name, score){
+    gradebook[name].testScores.push(score);
+  },
+  getAverage: function(name){
+    return average(gradebook[name].testScores);
+  }
+}
 
-
-
-
+for (var i = 0; i < students.length; i++) {
+  gradebook[students[i]] = {testScores: scores[i]}; //refactored my original code so that the students array is being utilized. Before, I had hard-coded the names as properties into the gradebook Object -- bad idea. Now, for each name in the students array, this for loop will run and will add a property with the student's name.
+};
 
 // __________________________________________
 // Reflect
-
+// This was my first time using JavaScript since the Unit 1 Week 3 assignments. I was a little rusty on my syntax, to say the least. I think the biggest 'aha' moment I had during this exercise was when I compared my original solution with the students and scores arrays that were provided. I thought to myself, 'What is wrong with my code? I never once reference the students array that was created'. I took a look at my code, and realized I had hard-coded the student names as properties into my gradebook variable. This is bad news if we decide to later add other names to the students array, since the gradebook variable won't dynamically change to add the new students as properties. To fix this issue, I removed the hard-coded student name properties, and instead created a for loop that goes through each name in the students array, and creates a property in the gradebook variable with that student name. Problem solved! 
 
 
 
