@@ -1,6 +1,6 @@
 // U3.W8-9: Gradebook from Names and Scores
 
-// I worked on this challenge [by myself, with:]
+// I worked on this challenge by myself.
 
 // These are the votes cast by each student. Do not alter these objects here.
 var votes = {
@@ -64,28 +64,80 @@ var officers = {
 }
 
 // Pseudocode
+// Tests 1,2,3 and 4:
+//   1. For each person in the votes variable,
+//   2. go through each vote that person made. If their candidate has already been voted for,
+//   3. increment their vote count by 1, otherwise create a property in the voteCount variable with the candidate name and a corresponding vote count of 1.
 
+// Tests 5,6,7 and 8:
+//   1. For each title in the voteCount variable,
+//   2. go through each candidate and check their vote count. If they've received the most votes for that title, 
+//   3. set their name as the value for the corresponding title property in the officers variable.
 
 // __________________________________________
 // Initial Solution
+// for(person in votes){
+//   var personsVotes = votes[person];
+//   for(title in personsVotes){
+//     if (voteCount[title].hasOwnProperty(personsVotes[title])) {
+//       voteCount[title][personsVotes[title]] += 1;
+//     }
 
+//     else{
+//       voteCount[title][personsVotes[title]] = 1;
+//     };  
+//   }
+// }
 
+// for(title in voteCount){
+//   console.log(title);
+//   console.log(voteCount[title]);
+//   maxVotes = 0;
+//   elected = "";
+//   for(candidate in voteCount[title]){
+//     console.log(candidate);
+//     console.log(voteCount[title][candidate]);
+//     if (voteCount[title][candidate] > maxVotes) {
+//       maxVotes = voteCount[title][candidate];
+//       elected = candidate;
+//     };
+//   }
+//   officers[title] = elected;
+// }
 
-
+// console.log(officers);
 
 
 
 // __________________________________________
 // Refactored Solution
 
+for(person in votes){
+  var personsVotes = votes[person];
+  for(title in personsVotes){
+    if (voteCount[title].hasOwnProperty(personsVotes[title])) {
+      voteCount[title][personsVotes[title]] += 1;
+    }
+    else{
+      voteCount[title][personsVotes[title]] = 1;
+    };  
+  }
+}
 
-
-
-
+for(title in voteCount){
+  maxVotes = 0;
+  elected = "";
+  for(candidate in voteCount[title]){
+    if (voteCount[title][candidate] > maxVotes) {
+      maxVotes = voteCount[title][candidate];
+      elected = candidate;
+    };
+  }
+  officers[title] = elected;
+}
 
 // __________________________________________
 // Reflection
-
 
 
 
