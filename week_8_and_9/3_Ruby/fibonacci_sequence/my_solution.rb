@@ -4,26 +4,31 @@
 # I worked on this challenge by myself.
 
 # 2. Pseudocode
-# 
+	#1. Create a function named is_fibonacci? that takes a number as a parameter
+	#2. In is_fibonacci?, calculate 5*(num^2)+4 and 5*(num^2)-4, and pass these values to is_perfect_square?. If is_perfect_square? returns true for either one, have is_fibonacci? return true.
+	#3. Create a function named is_perfect_square? that takes a number as a parameter, and returns true if that number is a perfect square (i.e. if the square root of that number mod 1 equals 0)
 
 # 3. Initial Solution
+#require 'bigdecimal'
+# def is_fibonacci?(num)
+#   is_perfect_square?(5*(num**2)+4) or is_perfect_square?(5*(num**2)-4)
+# end
+
+# def is_perfect_square?(num)
+#   num = BigDecimal.new(num)
+#   num.sqrt(20) %1 == 0
+# end
+
+# 4. Refactored Solution
 require 'bigdecimal'
+
 def is_fibonacci?(num)
   is_perfect_square?(5*(num**2)+4) or is_perfect_square?(5*(num**2)-4)
 end
 
 def is_perfect_square?(num)
-   # puts "Is #{num} a perfect square? Sqrt of #{num} is #{Math.sqrt(num.to_f)}, modded by 1 is #{Math.sqrt(num.to_f)%1}. #{num} is a perfect square: #{Math.sqrt(num.to_f)%1 == 0}"
-  num = BigDecimal.new(num)
-  num.sqrt(20) %1 == 0
+  BigDecimal.new(num).sqrt(20) % 1 == 0
 end
-
-# 4. Refactored Solution
-
-
-
-
-
 
 # 1. DRIVER TESTS GO BELOW THIS LINE
 def assert(message)
@@ -43,3 +48,4 @@ assert("Assertion failed! Should return false when it's not in the Fibonacci seq
 assert("Assertion failed! Should return false on large non-Fibonacci numbers"){is_fibonacci?(927372692193078999171) == false}
 
 # 5. Reflection 
+# This challenge threw me for a loop -- I had some serious difficulties getting my functions to work with very large numbers. When Math.sqrt is called on very large numbers, the resulting square root is not necessarily an exact, to the decimal, accurate result. This made it very difficult for me to determine whether or not a very large number is a perfect square, which was essential to my solution. I figured out that I could utilize the Ruby class BigDecimal to help get the job done, although I'm still not 100% happy with my solution, because I had to settle for an accuracy of up to 20 decimal places when calculating the square root, instead of perfect accuracy. This probably means that with VERY VERY large numbers, my solution will not work properly. I'm definitely interested to see how other students tackled this problem. 
