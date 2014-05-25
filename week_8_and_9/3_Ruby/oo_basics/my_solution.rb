@@ -1,10 +1,13 @@
 # U3.W8-9: OO Basics: Student
 
 
-# I worked on this challenge Joey Rosztoczy
+# I worked on this challenge with Joey Rosztoczy
 
 # 2. Pseudocode
-
+  #1. Create initialize method for Student class. It should take a first name and an array of scores
+  #2. Within the initialize method, create the instance variables first_name, scores, average, and letter grade
+  #3. Create the students array which contains 5 Student objects
+  #4. Create the linear_search method, which takes an array and a name as input, and returns either the index of the matching name or -1 if there's no match.
 
 
 # 3. Initial Solution
@@ -56,7 +59,7 @@ class Student
   def initialize(first_name, scores)   #Use named arguments! 
   	@first_name = first_name 
    	@scores = scores
-   	@average = @scores.inject(:+) / @scores.length
+   	@average = @scores.inject(:+) / @scores.length.to_f
    	@letter_grade = 
 
    	case @average
@@ -73,7 +76,6 @@ class Student
    	end
 
   end
-
 end
 
 def linear_search(students_array, first_name_search)
@@ -119,3 +121,5 @@ assert("Does not return -1 for a student that doesn't exist") {linear_search(stu
 
 
 # 5. Reflection 
+
+# In this challenge, Joey and I were able to brush up on a lot of different Ruby syntax. We used case statements, inject, each_with_index, and attr_accessors. While nothing struck us as particularly difficult, the most time consuming part of this challenge was looking up syntax for things we had forgotten. We also found out that we could add custom messages to our assert statements, which is pretty neat. When refactoring, I realized our @average instance variable was inadvertently doing integer divison, meaning it might not always be accurate. to fix this, i changed the code '@average = @scores.inject(:+) / @scores.length' to '@average = @scores.inject(:+) / @scores.length.to_f' -- this way, it's no longer doing integer divison, and should accurately compute the average.
