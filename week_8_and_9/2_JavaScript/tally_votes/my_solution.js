@@ -139,7 +139,7 @@ for(title in voteCount){
 // __________________________________________
 // Reflection
 
-
+// In this challenge, I learned how to use the for...in... syntax, as well as when to use bracket notation vs. dot notation when referencing an object's properties. In addition, I learned about the hasOwnProperty method, which will return true if the property already exists, and false otherwise. Once I discovered the hasOwnProperty method, this challenge was pretty straightforward. I had a few trip-ups regarding using dot notation vs. bracket notation, but after doing some research I was able to fully understand the difference between the two.
 
 
 
